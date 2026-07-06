@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuvo — Diseño web para negocios en Puerto Rico</title>
+<meta name="description" content="Nuvo — sitios web personalizados para negocios en Puerto Rico. Diseño, hosting y mantenimiento. En vivo en 14 días, garantizado.">
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nuvodesign.co/">
+<meta property="og:site_name" content="Nuvo">
+<meta property="og:title" content="Nuvo — Diseño web para negocios en Puerto Rico">
+<meta property="og:description" content="Sitios web personalizados, en vivo en 14 días. Diseño, hosting y mantenimiento — todo hecho por ti.">
+<meta property="og:image" content="https://nuvodesign.co/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_PR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nuvo — Diseño web para negocios en Puerto Rico">
+<meta name="twitter:description" content="Sitios web personalizados, en vivo en 14 días.">
+<meta name="twitter:image" content="https://nuvodesign.co/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1D30'/%3E%3Ctext x='30' y='45' font-family='Georgia,serif' font-size='36' fill='%23FAF5EC' text-anchor='middle' font-weight='700'%3EN%3C/text%3E%3Ccircle cx='47' cy='19' r='5.5' fill='%23C9A24B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E1D30; --navy-2:#13273f; --navy-3:#1b3452;
+    --gold:#C9A24B; --gold-soft:#E4C87F; --gold-deep:#B08A34;
+    --cream:#FAF5EC; --cream-2:#F3EAD9; --paper:#FFFFFF;
+    --ink:#17202B; --muted:#6E6558; --muted-navy:#A9B6C6;
+    --line:rgba(23,32,43,0.10);
+    --shadow:0 18px 50px -20px rgba(14,29,48,0.35);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;line-height:1.08}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .gold{color:var(--gold-deep)}
+  .eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:var(--gold-deep)}
+  .eyebrow.on-navy{color:var(--gold-soft)}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;transition:transform .15s ease,box-shadow .2s ease,background .2s ease;cursor:pointer;border:none;white-space:nowrap}
+  .btn-gold{background:var(--gold);color:var(--navy)}
+  .btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(201,162,75,.6)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(250,245,236,.35)}
+  .btn-ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft);transform:translateY(-2px)}
+  .btn-dark{background:var(--navy);color:var(--cream)}
+  .btn-dark:hover{background:var(--navy-3);transform:translateY(-2px)}
+  .wa-ico{width:17px;height:17px;flex:none}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(14,29,48,0.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:var(--cream);letter-spacing:-0.02em}
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-left:3px;margin-bottom:-2px;align-self:flex-end}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links a.link{color:var(--muted-navy);font-size:14.5px;font-weight:500;transition:color .2s}
+  .nav-links a.link:hover{color:var(--cream)}
+  .lang{display:flex;border:1px solid rgba(255,255,255,0.18);border-radius:999px;overflow:hidden}
+  .lang-btn{background:transparent;color:var(--muted-navy);border:none;padding:5px 11px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s}
+  .lang-btn.active{background:var(--gold);color:var(--navy)}
+  .nav-links .btn{padding:10px 18px;font-size:14px}
+  @media(max-width:760px){.nav-links a.link{display:none}}
+
+  /* hero */
+  .hero{position:relative;background:var(--navy);color:var(--cream);padding:96px 0 108px;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-30%;right:-15%;width:70%;height:120%;background:radial-gradient(circle at center,rgba(201,162,75,0.18),transparent 62%);pointer-events:none}
+  .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.028) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(180deg,black,transparent 85%);pointer-events:none}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-size:clamp(38px,6vw,66px);font-weight:600;max-width:16ch;margin:20px 0 0}
+  .hero p.sub{font-size:clamp(17px,2.2vw,20px);color:var(--muted-navy);max-width:52ch;margin:22px 0 0;line-height:1.55}
+  .hero .cta-row{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+  .badges{display:flex;gap:22px;margin-top:44px;flex-wrap:wrap;align-items:center}
+  .badge{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--muted-navy);font-weight:500}
+  .badge svg{width:18px;height:18px;color:var(--gold-soft);flex:none}
+
+  /* sections */
+  section{padding:88px 0}
+  .sec-head{max-width:56ch}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);margin-top:12px}
+  .sec-head p{color:var(--muted);font-size:17px;margin-top:14px}
+
+  /* pillars */
+  .pillars{background:var(--cream)}
+  .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .pillar{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:0 1px 0 rgba(23,32,43,.03)}
+  .pillar .ic{width:48px;height:48px;border-radius:12px;background:linear-gradient(140deg,var(--navy),var(--navy-3));display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .pillar .ic svg{width:23px;height:23px;color:var(--gold-soft)}
+  .pillar h3{font-size:21px;font-weight:600}
+  .pillar p{color:var(--muted);font-size:15px;margin-top:8px}
+  @media(max-width:760px){.pillar-grid{grid-template-columns:1fr}}
+
+  /* work */
+  .work{background:var(--navy);color:var(--cream)}
+  .work .sec-head p{color:var(--muted-navy)}
+  .work-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;margin-top:40px}
+  .card{background:var(--navy-2);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .browser-bar{height:40px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#0b1624;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .browser-bar .d{width:11px;height:11px;border-radius:50%}
+  .url{margin-left:10px;font-size:12px;color:#8fa1b6;background:rgba(255,255,255,0.06);border-radius:6px;padding:4px 12px;font-family:'Inter';letter-spacing:.02em}
+  .frame-wrap{position:relative;height:320px;background:#0b1420;overflow:hidden}
+  img.preview{position:absolute;top:0;left:0;width:100%;display:block;transition:top 3.2s ease}
+  .card:hover img.preview{top:-82px}
+  .frame-overlay{position:absolute;inset:0;z-index:3;display:block}
+  .card-body{padding:22px 24px}
+  .card-body h3{font-size:20px;font-weight:600}
+  .card-body p{color:var(--muted-navy);font-size:14.5px;margin:6px 0 16px}
+  .card.soon{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:34px 30px;background:linear-gradient(160deg,var(--navy-2),#0b1624);border-style:dashed;border-color:rgba(228,200,127,0.3)}
+  .card.soon .tag{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-soft)}
+  .card.soon h3{font-size:26px;font-weight:600;margin:14px 0 8px}
+  .card.soon p{color:var(--muted-navy);font-size:15px;margin-bottom:22px}
+  @media(max-width:760px){.work-grid{grid-template-columns:1fr}.frame-wrap{height:260px}}
+
+  /* packages */
+  .pkgs{background:var(--cream-2)}
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px;align-items:start}
+  .pkg{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;position:relative}
+  .pkg.core{background:var(--navy);color:var(--cream);border:1.5px solid var(--gold);box-shadow:0 24px 60px -24px rgba(14,29,48,.55);transform:translateY(-8px)}
+  .pkg-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:6px 16px;border-radius:999px}
+  .pkg .pname{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  .pkg.core .pname{color:var(--gold-soft)}
+  .pkg .price{font-family:'Fraunces',serif;font-size:44px;font-weight:600;margin-top:12px;line-height:1}
+  .pkg.core .price{color:#fff}
+  .pkg .pnote{font-size:13.5px;color:var(--muted);margin-top:8px}
+  .pkg.core .pnote{color:var(--muted-navy)}
+  .pkg ul{list-style:none;margin:22px 0 0;display:flex;flex-direction:column;gap:11px}
+  .pkg li{display:flex;gap:10px;font-size:14.5px;color:#34404d}
+  .pkg.core li{color:#dfe6ef}
+  .pkg li svg{width:17px;height:17px;color:var(--gold-deep);flex:none;margin-top:3px}
+  .pkg.core li svg{color:var(--gold-soft)}
+  .addon{text-align:center;color:var(--muted);font-size:15px;margin-top:30px}
+  @media(max-width:860px){.pkg-grid{grid-template-columns:1fr;max-width:420px;margin-inline:auto}.pkg.core{transform:none}}
+
+  /* guarantee */
+  .guarantee{padding:0}
+  .guarantee .inner{background:var(--navy);border:1.5px solid var(--gold);border-radius:22px;padding:44px 40px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .guarantee .inner::before{content:"";position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:60%;height:150%;background:radial-gradient(circle,rgba(201,162,75,.16),transparent 65%)}
+  .guarantee .seal{position:relative;width:56px;height:56px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+  .guarantee .seal svg{width:26px;height:26px;color:var(--gold-soft)}
+  .guarantee .label{position:relative;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-soft)}
+  .guarantee .gtext{position:relative;font-family:'Fraunces',serif;font-size:clamp(22px,3.2vw,32px);font-weight:600;color:var(--cream);max-width:22ch;margin:14px auto 0;line-height:1.25}
+
+  /* testimonial */
+  .testi{background:var(--cream);text-align:center}
+  .testi .stars{color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:20px}
+  .testi blockquote{font-family:'Fraunces',serif;font-size:clamp(22px,3.4vw,32px);font-weight:500;color:var(--ink);max-width:20ch;margin:0 auto;line-height:1.32}
+  .testi .by{margin-top:26px;font-weight:600;color:var(--ink);font-size:16px}
+  .testi .role{color:var(--muted);font-size:13.5px}
+  .testi blockquote{max-width:24ch}
+  @media(min-width:760px){.testi blockquote{max-width:30ch}}
+
+  /* contact */
+  .contact{background:var(--navy);color:var(--cream);text-align:center}
+  .contact h2{font-size:clamp(30px,4.6vw,48px);font-weight:600;margin-top:12px}
+  .contact p.sub{color:var(--muted-navy);font-size:18px;margin:16px auto 0;max-width:44ch}
+  .contact .cta-row{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .contact .email{margin-top:22px;font-size:14.5px;color:var(--muted-navy)}
+  .contact .email a{color:var(--gold-soft);border-bottom:1px solid rgba(228,200,127,.4);padding-bottom:1px}
+
+  /* footer */
+  footer.foot{background:#0a1522;color:var(--muted-navy);padding:34px 0}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .foot .brand{font-size:22px}
+  .foot .tag{font-size:13px;color:#6b7c90}
+  .foot .rights{font-size:12.5px;color:#5a6b7e}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Nuvo<span class="dot"></span></a>
+    <nav class="nav-links">
+      <a class="link" href="#work" data-i18n="nav_work">Trabajo</a>
+      <a class="link" href="#packages" data-i18n="nav_packages">Paquetes</a>
+      <a class="link" href="#contact" data-i18n="nav_contact">Contacto</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="btn btn-gold" href="https://wa.me/17874791188?text=Hola%20Nuvo%2C%20quiero%20un%20sitio%20web%20para%20mi%20negocio" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.9 1 .9-4.8-.3-.4C5.2 18.2 4.7 16.6 4.7 15 4.7 8.8 9.8 3.7 16 3.7S27.3 8.8 27.3 15 22.2 24.8 16 24.8zm6.2-8.2c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6s-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3 1 4.1.9.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>
+        WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow on-navy" data-i18n="hero_eyebrow">Diseño web para negocios en Puerto Rico</span>
+    <h1 data-i18n="hero_h1">Un sitio web que hace <span class="gold" style="color:var(--gold-soft)">crecer</span> tu negocio.</h1>
+    <p class="sub" data-i18n="hero_sub">Diseño personalizado, hosting y mantenimiento — todo hecho por ti. En vivo en 14 días, garantizado.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#work" data-i18n="hero_cta1">Ver nuestro trabajo</a>
+      <a class="btn btn-ghost" href="https://wa.me/17874791188?text=Hola%20Nuvo%2C%20quiero%20un%20sitio%20web%20para%20mi%20negocio" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.9 1 .9-4.8-.3-.4C5.2 18.2 4.7 16.6 4.7 15 4.7 8.8 9.8 3.7 16 3.7S27.3 8.8 27.3 15 22.2 24.8 16 24.8zm6.2-8.2c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6s-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3 1 4.1.9.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>
+        <span data-i18n="hero_cta2">Hablemos por WhatsApp</span>
+      </a>
+    </div>
+    <div class="badges">
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="badge1">Diseño único, no plantillas</span></span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="badge2">En vivo en 14 días</span></span>
+      <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke-linejoin="round"/></svg><span data-i18n="badge3">Garantía de devolución</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="how_eyebrow">Cómo trabajamos</span>
+      <h2 data-i18n="how_h2">Sencillo para ti. Impecable para tus clientes.</h2>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.4L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-.6L12 2z" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="pillar1_t">Diseño único</h3>
+        <p data-i18n="pillar1_d">Hecho desde cero para tu negocio. Nada de plantillas.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="pillar2_t">Listo en 14 días</h3>
+        <p data-i18n="pillar2_d">Rápido y sin esperas de meses.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="pillar3_t">Nos encargamos de todo</h3>
+        <p data-i18n="pillar3_d">Hosting, actualizaciones y soporte. Tú te relajas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow on-navy" data-i18n="work_eyebrow">Portafolio</span>
+      <h2 data-i18n="work_h2">Nuestro trabajo</h2>
+      <p data-i18n="work_sub">Sitios reales, en vivo y funcionando.</p>
+    </div>
+    <div class="work-grid">
+      <div class="card reveal">
+        <div class="browser-bar">
+          <span class="d" style="background:#ff5f57"></span><span class="d" style="background:#febc2e"></span><span class="d" style="background:#28c840"></span>
+          <span class="url">matosdistribution.com</span>
+        </div>
+        <div class="frame-wrap">
+          <img class="preview" src="assets/portfolio-matos.png" alt="Matos Distribution — sitio web por Nuvo" loading="lazy">
+          <a class="frame-overlay" href="https://matosdistribution.com" target="_blank" rel="noopener" aria-label="Ver sitio en vivo"></a>
+        </div>
+        <div class="card-body">
+          <h3>Matos Distribution</h3>
+          <p data-i18n="proj1_desc">Sitio corporativo con catálogo de productos y captura de clientes.</p>
+          <a class="btn btn-gold" href="https://matosdistribution.com" target="_blank" rel="noopener" data-i18n="proj1_cta">Ver sitio en vivo</a>
+        </div>
+      </div>
+      <div class="card soon reveal">
+        <span class="tag" data-i18n="proj2_tag">Próximamente</span>
+        <h3 data-i18n="proj2_name">Tu negocio aquí</h3>
+        <p data-i18n="proj2_desc">El próximo proyecto podría ser el tuyo. Hablemos.</p>
+        <a class="btn btn-ghost" href="#contact" data-i18n="proj2_cta">Empezar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="pkgs" id="packages">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-inline:auto;text-align:center">
+      <span class="eyebrow" data-i18n="pkg_eyebrow">Paquetes</span>
+      <h2 data-i18n="pkg_h2">Precios claros, sin sorpresas.</h2>
+      <p data-i18n="pkg_sub" style="margin-inline:auto">Elige tu punto de partida. Personaliza el resto.</p>
+    </div>
+    <div class="pkg-grid">
+      <!-- Starter -->
+      <div class="pkg reveal">
+        <div class="pname">Starter</div>
+        <div class="price">$500</div>
+        <div class="pnote" data-i18n="pkg_s_note">pago único + $50/mes</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_s_1">3 páginas personalizadas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_s_2">Diseño para móvil</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_s_3">Formulario de contacto</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_s_4">SEO básico + Google Business</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_s_5">Hosting incluido · sin actualizaciones</span></li>
+        </ul>
+      </div>
+      <!-- Core -->
+      <div class="pkg core reveal">
+        <span class="pkg-badge" data-i18n="pkg_badge">Recomendado</span>
+        <div class="pname">Core</div>
+        <div class="price">$1,000</div>
+        <div class="pnote" data-i18n="pkg_c_note">pago único + $99/mes</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_1">4–5 páginas, diseño distintivo</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_2">1 función interactiva</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_3">Sección Contacto + FAQ</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_4">SEO completo</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_5">Hosting + actualizaciones continuas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_6">Prioridad de entrega</span></li>
+        </ul>
+      </div>
+      <!-- Premium -->
+      <div class="pkg reveal">
+        <div class="pname">Premium</div>
+        <div class="price">$2,000+</div>
+        <div class="pnote" data-i18n="pkg_p_note">pago único + $150/mes</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_p_1">7+ páginas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_p_2">Tienda en línea</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_p_3">Múltiples funciones interactivas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_p_4">Reservas / citas</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_p_5">SEO avanzado + soporte prioritario</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="addon reveal" data-i18n="addon">Personaliza cualquier paquete: tienda en línea, reservas, más páginas y más.</p>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="wrap">
+    <div class="inner reveal">
+      <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="label" data-i18n="guarantee_label">Nuestra garantía</div>
+      <div class="gtext" data-i18n="guarantee_text">Tu nuevo sitio en vivo y espectacular en 14 días — o te devolvemos tu depósito, sin preguntas.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testi">
+  <div class="wrap reveal">
+    <div class="stars">★★★★★</div>
+    <blockquote data-i18n="testi_quote">"La verdad, ellos se encargan de todo. Nuestra página se ve increíble, siempre funciona, y nunca tengo que preocuparme por nada."</blockquote>
+    <div class="by">Matos Distribution</div>
+    <div class="role" data-i18n="testi_role">Cliente</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <span class="eyebrow on-navy" data-i18n="contact_eyebrow">Contacto</span>
+    <h2 data-i18n="contact_h2">¿List@ para tu nuevo sitio?</h2>
+    <p class="sub" data-i18n="contact_sub">Escríbeme por WhatsApp y hablamos hoy mismo. Sin compromiso.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://wa.me/17874791188?text=Hola%20Nuvo%2C%20quiero%20un%20sitio%20web%20para%20mi%20negocio" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.9 1 .9-4.8-.3-.4C5.2 18.2 4.7 16.6 4.7 15 4.7 8.8 9.8 3.7 16 3.7S27.3 8.8 27.3 15 22.2 24.8 16 24.8zm6.2-8.2c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6s-.8-1.9-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2 2.2.9 3 1 4.1.9.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.3-.6-.4z"/></svg>
+        <span data-i18n="contact_wa">Escribir por WhatsApp</span>
+      </a>
+    </div>
+    <p class="email"><span data-i18n="contact_email_label">o por correo:</span> <a href="mailto:eduardoandresmg@gmail.com">eduardoandresmg@gmail.com</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div>
+      <div class="brand">Nuvo<span class="dot"></span></div>
+      <div class="tag" data-i18n="footer_tag">Diseño web · Puerto Rico</div>
+    </div>
+    <div class="rights" data-i18n="footer_rights">© 2026 Nuvo. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+  nav_work:{es:"Trabajo",en:"Work"},
+  nav_packages:{es:"Paquetes",en:"Packages"},
+  nav_contact:{es:"Contacto",en:"Contact"},
+  hero_eyebrow:{es:"Diseño web para negocios en Puerto Rico",en:"Web design for Puerto Rico businesses"},
+  hero_h1:{es:'Un sitio web que hace <span style="color:var(--gold-soft)">crecer</span> tu negocio.',en:'A website that <span style="color:var(--gold-soft)">grows</span> your business.'},
+  hero_sub:{es:"Diseño personalizado, hosting y mantenimiento — todo hecho por ti. En vivo en 14 días, garantizado.",en:"Custom design, hosting, and maintenance — all done for you. Live in 14 days, guaranteed."},
+  hero_cta1:{es:"Ver nuestro trabajo",en:"See our work"},
+  hero_cta2:{es:"Hablemos por WhatsApp",en:"Chat on WhatsApp"},
+  badge1:{es:"Diseño único, no plantillas",en:"Custom, never templates"},
+  badge2:{es:"En vivo en 14 días",en:"Live in 14 days"},
+  badge3:{es:"Garantía de devolución",en:"Money-back guarantee"},
+  how_eyebrow:{es:"Cómo trabajamos",en:"How it works"},
+  how_h2:{es:"Sencillo para ti. Impecable para tus clientes.",en:"Simple for you. Flawless for your customers."},
+  pillar1_t:{es:"Diseño único",en:"Custom design"},
+  pillar1_d:{es:"Hecho desde cero para tu negocio. Nada de plantillas.",en:"Built from scratch for your business. Never templates."},
+  pillar2_t:{es:"Listo en 14 días",en:"Live in 14 days"},
+  pillar2_d:{es:"Rápido y sin esperas de meses.",en:"Fast — no waiting months."},
+  pillar3_t:{es:"Nos encargamos de todo",en:"We handle everything"},
+  pillar3_d:{es:"Hosting, actualizaciones y soporte. Tú te relajas.",en:"Hosting, updates, and support. You relax."},
+  work_eyebrow:{es:"Portafolio",en:"Portfolio"},
+  work_h2:{es:"Nuestro trabajo",en:"Our work"},
+  work_sub:{es:"Sitios reales, en vivo y funcionando.",en:"Real sites, live and working."},
+  proj1_desc:{es:"Sitio corporativo con catálogo de productos y captura de clientes.",en:"Corporate site with product catalog and lead capture."},
+  proj1_cta:{es:"Ver sitio en vivo",en:"View live site"},
+  proj2_tag:{es:"Próximamente",en:"Coming soon"},
+  proj2_name:{es:"Tu negocio aquí",en:"Your business here"},
+  proj2_desc:{es:"El próximo proyecto podría ser el tuyo. Hablemos.",en:"The next project could be yours. Let's talk."},
+  proj2_cta:{es:"Empezar",en:"Start"},
+  pkg_eyebrow:{es:"Paquetes",en:"Packages"},
+  pkg_h2:{es:"Precios claros, sin sorpresas.",en:"Clear pricing, no surprises."},
+  pkg_sub:{es:"Elige tu punto de partida. Personaliza el resto.",en:"Pick your starting point. Customize the rest."},
+  pkg_badge:{es:"Recomendado",en:"Recommended"},
+  pkg_s_note:{es:"pago único + $50/mes",en:"one-time + $50/mo"},
+  pkg_s_1:{es:"3 páginas personalizadas",en:"3 custom pages"},
+  pkg_s_2:{es:"Diseño para móvil",en:"Mobile-responsive"},
+  pkg_s_3:{es:"Formulario de contacto",en:"Contact form"},
+  pkg_s_4:{es:"SEO básico + Google Business",en:"Basic SEO + Google Business"},
+  pkg_s_5:{es:"Hosting incluido · sin actualizaciones",en:"Hosting included · no updates"},
+  pkg_c_note:{es:"pago único + $99/mes",en:"one-time + $99/mo"},
+  pkg_c_1:{es:"4–5 páginas, diseño distintivo",en:"4–5 pages, distinctive design"},
+  pkg_c_2:{es:"1 función interactiva",en:"1 interactive feature"},
+  pkg_c_3:{es:"Sección Contacto + FAQ",en:"Contact + FAQ section"},
+  pkg_c_4:{es:"SEO completo",en:"Full SEO"},
+  pkg_c_5:{es:"Hosting + actualizaciones continuas",en:"Hosting + ongoing updates"},
+  pkg_c_6:{es:"Prioridad de entrega",en:"Priority turnaround"},
+  pkg_p_note:{es:"pago único + $150/mes",en:"one-time + $150/mo"},
+  pkg_p_1:{es:"7+ páginas",en:"7+ pages"},
+  pkg_p_2:{es:"Tienda en línea",en:"Online store"},
+  pkg_p_3:{es:"Múltiples funciones interactivas",en:"Multiple interactive features"},
+  pkg_p_4:{es:"Reservas / citas",en:"Booking / scheduling"},
+  pkg_p_5:{es:"SEO avanzado + soporte prioritario",en:"Advanced SEO + priority support"},
+  addon:{es:"Personaliza cualquier paquete: tienda en línea, reservas, más páginas y más.",en:"Customize any package: online store, booking, more pages, and more."},
+  guarantee_label:{es:"Nuestra garantía",en:"Our guarantee"},
+  guarantee_text:{es:"Tu nuevo sitio en vivo y espectacular en 14 días — o te devolvemos tu depósito, sin preguntas.",en:"Your new site live and looking great in 14 days — or your deposit back, no questions asked."},
+  testi_quote:{es:'"La verdad, ellos se encargan de todo. Nuestra página se ve increíble, siempre funciona, y nunca tengo que preocuparme por nada."',en:'"Honestly, they handle everything. Our site looks incredible, always works, and I never have to worry about a thing."'},
+  testi_role:{es:"Cliente",en:"Client"},
+  contact_eyebrow:{es:"Contacto",en:"Contact"},
+  contact_h2:{es:"¿List@ para tu nuevo sitio?",en:"Ready for your new site?"},
+  contact_sub:{es:"Escríbeme por WhatsApp y hablamos hoy mismo. Sin compromiso.",en:"Message me on WhatsApp and let's talk today. No pressure."},
+  contact_wa:{es:"Escribir por WhatsApp",en:"Message on WhatsApp"},
+  contact_email_label:{es:"o por correo:",en:"or by email:"},
+  footer_tag:{es:"Diseño web · Puerto Rico",en:"Web design · Puerto Rico"},
+  footer_rights:{es:"© 2026 Nuvo. Todos los derechos reservados.",en:"© 2026 Nuvo. All rights reserved."}
+};
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(I18N[k] && I18N[k][lang]!=null) el.innerHTML = I18N[k][lang];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  try{localStorage.setItem('nuvo_lang',lang)}catch(e){}
+}
+(function(){
+  let saved=null; try{saved=localStorage.getItem('nuvo_lang')}catch(e){}
+  if(saved && saved!=='es') setLang(saved);
+})();
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
