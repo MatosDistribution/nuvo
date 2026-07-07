@@ -273,6 +273,7 @@
   .guarantee .seal svg{width:27px;height:27px;color:var(--gold-soft)}
   .guarantee .label{position:relative;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-soft)}
   .guarantee .gtext{position:relative;font-family:'Fraunces',serif;font-size:clamp(22px,3.2vw,32px);font-weight:600;color:var(--cream);max-width:22ch;margin:14px auto 0;line-height:1.25}
+  .guarantee .gfine{position:relative;font-size:13px;color:var(--muted-navy);max-width:44ch;margin:16px auto 0;line-height:1.5}
 
   /* testimonial */
   .testi{background:var(--cream);text-align:center}
@@ -591,6 +592,7 @@
       <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="label" data-i18n="guarantee_label">Nuestra garantía</div>
       <div class="gtext" data-i18n="guarantee_text">Tu nuevo sitio en vivo y espectacular en 14 días — o te devolvemos tu depósito, sin preguntas.</div>
+      <div class="gfine" data-i18n="guarantee_fine">Los 14 días comienzan cuando recibo toda la información que necesito para tu sitio.</div>
     </div>
   </div>
 </section>
@@ -620,6 +622,7 @@
       <details class="q"><summary><span data-i18n="faq3_q">¿Puedo pedir cambios?</span><span class="sign" aria-hidden="true"></span></summary><div class="a" data-i18n="faq3_a">Claro. Revisamos juntos hasta que te encante antes de publicar, y el plan mensual incluye cambios continuos.</div></details>
       <details class="q"><summary><span data-i18n="faq4_q">¿Necesito saber de tecnología?</span><span class="sign" aria-hidden="true"></span></summary><div class="a" data-i18n="faq4_a">Para nada. Yo me encargo de todo — dominio, hosting, diseño. Tú solo apruebas.</div></details>
       <details class="q"><summary><span data-i18n="faq5_q">¿Qué pasa si no me gusta?</span><span class="sign" aria-hidden="true"></span></summary><div class="a" data-i18n="faq5_a">Mi garantía: en vivo y espectacular en 14 días, o te devuelvo el depósito, sin preguntas.</div></details>
+      <details class="q"><summary><span data-i18n="faqg_q">¿Cuándo empiezan a contar los 14 días?</span><span class="sign" aria-hidden="true"></span></summary><div class="a" data-i18n="faqg_a">Empiezan desde el momento en que recibo toda la información que te pido —logo, fotos, textos y los detalles de tu negocio—. Así el reloj corre por mi parte, no por la tuya.</div></details>
       <details class="q"><summary><span data-i18n="faq6_q">¿Ya tengo dominio?</span><span class="sign" aria-hidden="true"></span></summary><div class="a" data-i18n="faq6_a">Perfecto, lo conecto. Y si no tienes, te consigo uno.</div></details>
     </div>
   </div>
@@ -760,6 +763,7 @@ const I18N = {
   pkg_foot:{es:"Personaliza cualquier paquete: tienda en línea, reservas, más páginas y más. <strong>Todos incluyen garantía de 14 días.</strong>",en:"Customize any package: online store, booking, more pages, and more. <strong>All include a 14-day guarantee.</strong>"},
   guarantee_label:{es:"Nuestra garantía",en:"Our guarantee"},
   guarantee_text:{es:"Tu nuevo sitio en vivo y espectacular en 14 días — o te devolvemos tu depósito, sin preguntas.",en:"Your new site live and looking great in 14 days — or your deposit back, no questions asked."},
+  guarantee_fine:{es:"Los 14 días comienzan cuando recibo toda la información que necesito para tu sitio.",en:"The 14 days start once I receive all the information I need for your site."},
   testi_quote:{es:"La verdad, ellos se encargan de todo. Nuestra página se ve increíble, siempre funciona, y nunca tengo que preocuparme por nada.",en:"Honestly, they handle everything. Our site looks incredible, always works, and I never have to worry about a thing."},
   testi_role:{es:"Cliente · San Juan, PR",en:"Client · San Juan, PR"},
   faq_eyebrow:{es:"Preguntas frecuentes",en:"FAQ"},
@@ -774,6 +778,8 @@ const I18N = {
   faq4_a:{es:"Para nada. Yo me encargo de todo — dominio, hosting, diseño. Tú solo apruebas.",en:"Not at all. I handle everything — domain, hosting, design. You just approve."},
   faq5_q:{es:"¿Qué pasa si no me gusta?",en:"What if I don't like it?"},
   faq5_a:{es:"Mi garantía: en vivo y espectacular en 14 días, o te devuelvo el depósito, sin preguntas.",en:"My guarantee: live and looking great in 14 days, or your deposit back, no questions."},
+  faqg_q:{es:"¿Cuándo empiezan a contar los 14 días?",en:"When do the 14 days start counting?"},
+  faqg_a:{es:"Empiezan desde el momento en que recibo toda la información que te pido —logo, fotos, textos y los detalles de tu negocio—. Así el reloj corre por mi parte, no por la tuya.",en:"They start the moment I receive all the information I ask for — logo, photos, text, and your business details. That way the clock runs on me, not on you."},
   faq6_q:{es:"¿Ya tengo dominio?",en:"I already have a domain?"},
   faq6_a:{es:"Perfecto, lo conecto. Y si no tienes, te consigo uno.",en:"Perfect, I'll connect it. And if you don't have one, I'll get you one."},
   contact_eyebrow:{es:"Contacto",en:"Contact"},
