@@ -178,6 +178,20 @@
   .out p{color:var(--muted);font-size:14.5px;margin-top:7px}
   @media(max-width:760px){.out-grid{grid-template-columns:1fr}}
 
+  /* before / after slider */
+  .ba-sec{background:var(--navy);color:var(--cream)}
+  .ba-sec .sec-head p{color:var(--muted-navy)}
+  .ba{position:relative;max-width:900px;margin:42px auto 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--sh-lg);aspect-ratio:1100/730;--pos:50%;touch-action:pan-y}
+  .ba-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+  .ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+  .ba-divider{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:var(--gold);transform:translateX(-1.5px);z-index:4;pointer-events:none;box-shadow:0 0 14px rgba(201,162,75,.6)}
+  .ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;box-shadow:var(--sh-md)}
+  .ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:5}
+  .ba-tag{position:absolute;top:14px;z-index:4;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:5px 12px;border-radius:999px;pointer-events:none}
+  .ba-tag-a{left:14px;background:rgba(10,16,24,.72);color:#fff}
+  .ba-tag-b{right:14px;background:var(--gold);color:var(--navy)}
+  .ba-note{text-align:center;color:var(--muted-navy-2);font-size:12.5px;margin-top:16px}
+
   /* pillars-as-process timeline */
   .process{background:var(--paper)}
   .steps{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
@@ -426,6 +440,26 @@
   </div>
 </section>
 
+<!-- BEFORE / AFTER -->
+<section class="ba-sec" id="transformacion">
+  <div class="wrap">
+    <div class="sec-head centered reveal">
+      <span class="eyebrow on-navy" data-i18n="ba_eyebrow">Antes y después</span>
+      <h2 data-i18n="ba_h2">De "página cualquiera" a otro nivel</h2>
+      <p data-i18n="ba_sub">Arrastra la línea para ver la diferencia.</p>
+    </div>
+    <div class="ba reveal">
+      <img class="ba-img" src="assets/portfolio-matos.webp" width="1100" height="730" alt="Después: un sitio profesional hecho por Nuvo" loading="lazy">
+      <div class="ba-before"><img class="ba-img" src="assets/before.webp" width="1100" height="730" alt="Antes: un sitio genérico y anticuado" loading="lazy"></div>
+      <div class="ba-divider"><span class="ba-handle" aria-hidden="true">⟺</span></div>
+      <span class="ba-tag ba-tag-a" data-i18n="ba_before">Antes</span>
+      <span class="ba-tag ba-tag-b" data-i18n="ba_after">Después</span>
+      <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+    </div>
+    <p class="ba-note" data-i18n="ba_note">Ejemplo ilustrativo del "antes".</p>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="wrap">
@@ -539,7 +573,7 @@
         <span class="pkg-badge" data-i18n="pkg_badge">Recomendado</span>
         <div class="pname">Core</div>
         <div class="price">$1,000</div>
-        <div class="pnote" data-i18n="pkg_c_note">pago único + $99/mes</div>
+        <div class="pnote" data-i18n="pkg_c_note">pago único + $100/mes</div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_1">4–5 páginas, diseño distintivo</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pkg_c_2">1 función interactiva</span></li>
@@ -564,7 +598,7 @@
         <a class="btn btn-dark btn-block" href="https://wa.me/17874791188?text=Hola%20Nuvo%2C%20me%20interesa%20el%20paquete%20Premium." target="_blank" rel="noopener" data-i18n="pkg_cta">Empezar</a>
       </div>
     </div>
-    <p class="pkg-foot reveal" data-i18n="pkg_foot">Personaliza cualquier paquete: tienda en línea, reservas, más páginas y más. <strong>Todos incluyen mi garantía de 14 días.</strong></p>
+    <p class="pkg-foot reveal" data-i18n="pkg_foot">Personaliza cualquier paquete: tienda en línea, reservas, más páginas y más. <strong>Todos incluyen garantía de 14 días.</strong></p>
   </div>
 </section>
 
@@ -681,6 +715,12 @@ const I18N = {
   out2_d:{es:"Reservas, pedidos y contacto directo desde tu página, sin llamadas perdidas.",en:"Bookings, orders, and contact straight from your page — no missed calls."},
   out3_t:{es:"Luces profesional",en:"You look professional"},
   out3_d:{es:"Te ves más serio y confiable que la competencia que solo tiene Facebook.",en:"You look more serious and trustworthy than competitors who only have Facebook."},
+  ba_eyebrow:{es:"Antes y después",en:"Before &amp; after"},
+  ba_h2:{es:'De "página cualquiera" a otro nivel',en:'From "just a page" to next-level'},
+  ba_sub:{es:"Arrastra la línea para ver la diferencia.",en:"Drag the line to see the difference."},
+  ba_before:{es:"Antes",en:"Before"},
+  ba_after:{es:"Después",en:"After"},
+  ba_note:{es:'Ejemplo ilustrativo del "antes".',en:'Illustrative example of the "before".'},
   proc_eyebrow:{es:"Cómo funciona",en:"How it works"},
   proc_h2:{es:"De la llamada a en vivo, en 14 días",en:"From call to live, in 14 days"},
   step1_t:{es:"Cuéntame de tu negocio",en:"Tell me about your business"},
@@ -724,7 +764,7 @@ const I18N = {
   pkg_s_3:{es:"Formulario de contacto",en:"Contact form"},
   pkg_s_4:{es:"SEO básico + Google Business",en:"Basic SEO + Google Business"},
   pkg_s_5:{es:"Hosting incluido · sin actualizaciones",en:"Hosting included · no updates"},
-  pkg_c_note:{es:"pago único + $99/mes",en:"one-time + $99/mo"},
+  pkg_c_note:{es:"pago único + $100/mes",en:"one-time + $100/mo"},
   pkg_c_1:{es:"4–5 páginas, diseño distintivo",en:"4–5 pages, distinctive design"},
   pkg_c_2:{es:"1 función interactiva",en:"1 interactive feature"},
   pkg_c_3:{es:"Sección Contacto + FAQ",en:"Contact + FAQ section"},
@@ -739,7 +779,7 @@ const I18N = {
   pkg_p_5:{es:"SEO avanzado + soporte prioritario",en:"Advanced SEO + priority support"},
   pkg_cta:{es:"Empezar",en:"Get started"},
   pkg_cta_core:{es:"Empezar con Core",en:"Start with Core"},
-  pkg_foot:{es:"Personaliza cualquier paquete: tienda en línea, reservas, más páginas y más. <strong>Todos incluyen mi garantía de 14 días.</strong>",en:"Customize any package: online store, booking, more pages, and more. <strong>All include my 14-day guarantee.</strong>"},
+  pkg_foot:{es:"Personaliza cualquier paquete: tienda en línea, reservas, más páginas y más. <strong>Todos incluyen garantía de 14 días.</strong>",en:"Customize any package: online store, booking, more pages, and more. <strong>All include a 14-day guarantee.</strong>"},
   guarantee_label:{es:"Nuestra garantía",en:"Our guarantee"},
   guarantee_text:{es:"Tu nuevo sitio en vivo y espectacular en 14 días — o te devolvemos tu depósito, sin preguntas.",en:"Your new site live and looking great in 14 days — or your deposit back, no questions asked."},
   testi_quote:{es:"La verdad, ellos se encargan de todo. Nuestra página se ve increíble, siempre funciona, y nunca tengo que preocuparme por nada.",en:"Honestly, they handle everything. Our site looks incredible, always works, and I never have to worry about a thing."},
@@ -781,6 +821,7 @@ function setLang(lang){
 (function(){let s=null;try{s=localStorage.getItem('nuvo_lang')}catch(e){}if(s&&s!=='es')setLang(s);})();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0.12});
 document.querySelectorAll('.reveal,.stagger').forEach(el=>io.observe(el));
+document.querySelectorAll('.ba').forEach(ba=>{const r=ba.querySelector('.ba-range');const upd=()=>ba.style.setProperty('--pos',r.value+'%');r.addEventListener('input',upd);upd();});
 </script>
 </body>
 </html>
