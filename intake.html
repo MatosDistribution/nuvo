@@ -6,7 +6,7 @@
 <title>Nuvo — Cuestionario de tu proyecto</title>
 <meta name="description" content="Cuéntanos de tu negocio para empezar tu sitio web con Nuvo.">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1D30'/%3E%3Ctext x='30' y='45' font-family='Georgia,serif' font-size='36' fill='%23FAF5EC' text-anchor='middle' font-weight='700'%3EN%3C/text%3E%3Ccircle cx='47' cy='19' r='5.5' fill='%23C9A24B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Crect width='56' height='56' rx='14' fill='%23C9A24B'/%3E%3Ctext x='28' y='41' font-family='Georgia,serif' font-size='34' fill='%23FAF5EC' text-anchor='middle' font-weight='700'%3EN%3C/text%3E%3Ccircle cx='43' cy='14' r='5' fill='%230E1D30'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
   header.nav{background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.07)}
   .nav-inner{max-width:760px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;justify-content:space-between}
   .brand{display:flex;align-items:center;font-family:'Fraunces',serif;font-weight:600;font-size:25px;color:var(--cream);letter-spacing:-0.02em}
+  .brand .mark{width:27px;height:27px;margin-right:8px;flex:none;border-radius:7px}
   .brand .o{position:relative;display:inline-block;line-height:1}
   .brand .dot{position:absolute;left:50%;top:-0.14em;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:var(--gold)}
   .lang{display:flex;border:1px solid rgba(255,255,255,0.18);border-radius:999px;overflow:hidden}
@@ -90,7 +91,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="/" class="brand">Nuv<span class="o">o<span class="dot"></span></span></a>
+    <a href="/" class="brand" aria-label="Nuvo — inicio"><svg class="mark" viewBox="0 0 56 56" aria-hidden="true"><rect width="56" height="56" rx="14" fill="#C9A24B"/><text x="28" y="41" font-family="Fraunces,Georgia,serif" font-size="33" font-weight="700" fill="#FAF5EC" text-anchor="middle">N</text><circle cx="43" cy="14" r="5" fill="#0E1D30"/></svg>Nuv<span class="o">o<span class="dot"></span></span></a>
     <div class="lang" role="group" aria-label="Language">
       <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
